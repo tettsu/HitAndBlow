@@ -4,17 +4,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import constants.Sentence;
+
 public class HitAndBlow {
 
 	public static void main(String[] args) {
 		//変数の初期化
-		String title = "HitAndBlow";
-		String rule_description = "隠された3つの数字を当てます。"
-				+ "1つの数字は1～6の間です。"
-				+ "答えの数字の中で重複が起きることはありません。"
-				+ "入力した数字と位置が両方一致していればHit、"
-				+ "数字だけがあっていたらBlowとカウントします。"
-				+ "全てHitさせることができれば終了です。";
 		int[] answer 	= new int[3];
 		int[] input = new int[3];
 
@@ -24,8 +19,13 @@ public class HitAndBlow {
 
 		//タイトルとルールの説明
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println(title);
-		System.out.println(rule_description);
+		System.out.println(Sentence.GAME_TITLE);
+		System.out.println(Sentence.RULE_DESCRIPTION1);
+		System.out.println(Sentence.RULE_DESCRIPTION2);
+		System.out.println(Sentence.RULE_DESCRIPTION3);
+		System.out.println(Sentence.RULE_DESCRIPTION4);
+		System.out.println(Sentence.RULE_DESCRIPTION5);
+		System.out.println(Sentence.RULE_DESCRIPTION6);
 
 		//ランダムな答えの生成
 		//同じ数字は含まないようにする
@@ -49,17 +49,17 @@ public class HitAndBlow {
 		//入力させる。数値のチェックを行う。
 		while (true){
 			count++;
-			System.out.println(count+"回目");
+			System.out.println(count+"回目のチャレンジです");
 			//インプット
 			for(int i = 0; i < answer.length; i++){
-				System.out.println((i+1)+"個目");
+				System.out.println((i+1)+"個目の数値を入力して下さい");
 				try{
 					input[i] = Integer.parseInt(br.readLine());
 				}catch(NumberFormatException e){
-					System.err.println("数値を入力してください！");
+					System.err.println("Please Enter Number!");
 					i--;
 				}catch(IOException e){
-					System.err.println("もう一度入力してください。");
+					System.err.println("Plaese Enter Something...");
 					i--;
 				}
 			}
@@ -77,12 +77,13 @@ public class HitAndBlow {
 		}
 
 		//終了判断
-		System.out.println("Hit"+hit+"Blow"+blow);
+		System.out.println("Hit;"+hit);
+		System.out.println("Blow:"+blow);
 		if(hit == 3){
-			System.out.println("Congratuation!!!!!!!!!!!!!!!!");
+			System.out.println(Sentence.CONGRATULATION_MESSAGE);
 			break;
 		}else{
-			System.out.println();
+			System.out.println(Sentence.REGRET_MESSAGE);
 		}
 	}
 	}
