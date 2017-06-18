@@ -20,12 +20,13 @@ public class HitAndBlow {
 		//タイトルとルールの説明
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println(Sentence.GAME_TITLE);
+		System.out.println(Sentence.LINE);
 		System.out.println(Sentence.RULE_DESCRIPTION1);
 		System.out.println(Sentence.RULE_DESCRIPTION2);
 		System.out.println(Sentence.RULE_DESCRIPTION3);
 		System.out.println(Sentence.RULE_DESCRIPTION4);
 		System.out.println(Sentence.RULE_DESCRIPTION5);
-		System.out.println(Sentence.RULE_DESCRIPTION6);
+		System.out.println(Sentence.LINE);
 
 		//ランダムな答えの生成
 		//同じ数字は含まないようにする
@@ -84,6 +85,8 @@ public class HitAndBlow {
 			break;
 		}else{
 			System.out.println(Sentence.REGRET_MESSAGE);
+			System.out.println(Sentence.LONG_LINE);
+			System.out.println(Sentence.PARAGRAPH_CHANGE);
 		}
 	}
 	}
