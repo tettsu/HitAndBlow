@@ -26,7 +26,6 @@ public class HitAndBlow {
 		System.out.println(Sentence.RULE_DESCRIPTION3);
 		System.out.println(Sentence.RULE_DESCRIPTION4);
 		System.out.println(Sentence.RULE_DESCRIPTION5);
-		System.out.println(Sentence.LINE);
 
 		//ランダムな答えの生成
 		//同じ数字は含まないようにする
@@ -53,7 +52,7 @@ public class HitAndBlow {
 			System.out.println(count+"回目のチャレンジです");
 			//インプット
 			for(int i = 0; i < answer.length; i++){
-				System.out.println((i+1)+"個目の数値を入力して下さい");
+				System.out.print((i+1)+"個目の入力：");
 				try{
 					input[i] = Integer.parseInt(br.readLine());
 				}catch(NumberFormatException e){
@@ -64,30 +63,28 @@ public class HitAndBlow {
 					i--;
 				}
 			}
-		//答え判断
-		hit = 0;
-		blow = 0;
-		for(int i = 0; i < answer.length; i++){
-			for(int j = 0; j < answer.length; j++){
-				if ( i == j && input[i] == answer[j]){
-					hit++;
-				} else if(input[i] == answer[j]){
-					blow++;
+			//答え判断
+			hit = 0;
+			blow = 0;
+			for(int i = 0; i < answer.length; i++){
+				for(int j = 0; j < answer.length; j++){
+					if ( i == j && input[i] == answer[j]){
+						hit++;
+					} else if(input[i] == answer[j]){
+						blow++;
+					}
 				}
 			}
-		}
 
-		//終了判断
-		System.out.println("Hit;"+hit);
-		System.out.println("Blow:"+blow);
-		if(hit == 3){
-			System.out.println(Sentence.CONGRATULATION_MESSAGE);
-			break;
-		}else{
-			System.out.println(Sentence.REGRET_MESSAGE);
-			System.out.println(Sentence.LONG_LINE);
-			System.out.println(Sentence.PARAGRAPH_CHANGE);
+			//終了判断
+			System.out.println("Hit:"+hit+", "+"Blow"+blow);
+			if(hit == 3){
+				System.out.println(Sentence.CONGRATULATION_MESSAGE);
+				break;
+			}else{
+				System.out.println(Sentence.REGRET_MESSAGE);
+				System.out.println(Sentence.LONG_LINE);
+			}
 		}
-	}
 	}
 }
