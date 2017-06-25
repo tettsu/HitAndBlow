@@ -21,11 +21,13 @@ public class HitAndBlow {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println(Sentence.GAME_TITLE);
 		System.out.println(Sentence.LINE);
+		System.out.println(Sentence.RULE_DESCRIPTION_TITLE);
 		System.out.println(Sentence.RULE_DESCRIPTION1);
 		System.out.println(Sentence.RULE_DESCRIPTION2);
 		System.out.println(Sentence.RULE_DESCRIPTION3);
 		System.out.println(Sentence.RULE_DESCRIPTION4);
 		System.out.println(Sentence.RULE_DESCRIPTION5);
+		System.out.println(Sentence.LINE);
 
 		//ランダムな答えの生成
 		//同じ数字は含まないようにする
@@ -49,17 +51,17 @@ public class HitAndBlow {
 		//入力させる。数値のチェックを行う。
 		while (true){
 			count++;
-			System.out.println(count+"回目のチャレンジです");
+			System.out.println(count+Sentence.CHALLENGE_COUNT);
 			//インプット
 			for(int i = 0; i < answer.length; i++){
-				System.out.print((i+1)+"個目の入力：");
+				System.out.print((i+1)+Sentence.INDEX_OF_INPUTS);
 				try{
 					input[i] = Integer.parseInt(br.readLine());
 				}catch(NumberFormatException e){
-					System.err.println("Please Enter Number!");
+					System.err.println(Sentence.PLEASE_ENTER_NUMBER);
 					i--;
 				}catch(IOException e){
-					System.err.println("Plaese Enter Something...");
+					System.err.println(Sentence.PLEASE_ENTER_SOMETHING);
 					i--;
 				}
 			}
@@ -77,13 +79,14 @@ public class HitAndBlow {
 			}
 
 			//終了判断
-			System.out.println("Hit:"+hit+", "+"Blow"+blow);
+			System.out.println(Sentence.HIT_COUNTS+hit);
+			System.out.println(Sentence.BLOW_COUNTS+blow);
 			if(hit == 3){
 				System.out.println(Sentence.CONGRATULATION_MESSAGE);
 				break;
 			}else{
 				System.out.println(Sentence.REGRET_MESSAGE);
-				System.out.println(Sentence.LONG_LINE);
+				System.out.println(Sentence.LINE);
 			}
 		}
 	}
