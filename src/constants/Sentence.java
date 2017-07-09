@@ -11,7 +11,7 @@ public class Sentence {
 	public static String RULE_DESCRIPTION5 = "Rule5：全てHitさせることができれば終了です。";
 
 	public static String CONGRATULATION_MESSAGE = "Congratulation!!";
-	public static String REGRET_MESSAGE = "残念ながら違います。もう一トライして下さい！";
+	public static String RETRY_MESSAGE = "残念ながら違います。もう一トライして下さい！";
 
 	public static String LINE = "--------------------------------";
 

@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import javax.swing.JOptionPane;
+
 import constants.Sentence;
 
 public class HitAndBlow {
@@ -85,8 +87,9 @@ public class HitAndBlow {
 				System.out.println(Sentence.CONGRATULATION_MESSAGE);
 				break;
 			}else{
-				System.out.println(Sentence.REGRET_MESSAGE);
+				System.out.println(Sentence.RETRY_MESSAGE);
 				System.out.println(Sentence.LINE);
+				JOptionPane.showMessageDialog(null, Sentence.RETRY_MESSAGE, "Retry!!", JOptionPane.INFORMATION_MESSAGE, null);
 			}
 		}
 	}
